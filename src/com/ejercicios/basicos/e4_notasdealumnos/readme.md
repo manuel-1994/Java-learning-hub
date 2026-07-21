@@ -1,0 +1,3 @@
+# Ejercicio nº 4 - nota de alumnos
+
+En una tabla de N filas y N columnas se guardan las notas de N cantidad de alumnos de secundaria. Cada fila corresponde a las notas y al promedio de cada alumno. Se necesita un programa que permita a un profesor cargar, en las N posiciones (columnas) de cada fila, las notas del alumno y que se agregue una última columna donde se calculen los promedios. Una vez realizado los cálculos, se desea mostrar las notas de cada alumno y el promedio correspondiente recorriendo la matriz.

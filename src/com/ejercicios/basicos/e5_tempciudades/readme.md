@@ -1,0 +1,3 @@
+# Ejercicio nº 5 - Temperatura de ciudades
+
+En tres vectores diferentes se guardan los nombre, temperatura mínimas y máximas de N ciudades del mundo. En el primer vector se guardan los nombres de las ciudades, en el segundo las temperaturas mínimas alcanzadas y en el tercero las temperaturas máximas alcanzadas en la ultima semana. Se necesita un programa que permita cargar las ciudades, sus temperaturas mínimas y máximas; ademas deberá poder informar en pantalla cual fue la ciudad con la temperatura mas baja y cual con la temperatura mas alta (dando a conocer al mismo tiempo la cantidad de grados).

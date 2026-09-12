@@ -1,4 +1,4 @@
-package com.ejemplos.igu.swing;
+package com.ejemplos.igu.swing.basico;
 
 import java.awt.Font;
 import java.awt.Graphics;

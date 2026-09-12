@@ -1,4 +1,4 @@
-package com.ejemplos.igu.swing;
+package com.ejemplos.igu.swing.basico;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;

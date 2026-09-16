@@ -1,4 +1,4 @@
-package com.ejemplos.igu.swing.eventos;
+package com.ejemplos.igu.swing.eventos.accionEvents;
 
 import java.awt.Color;
 
@@ -8,7 +8,7 @@ import javax.swing.JPanel;
 
 public class PruebaEventosLambda {
     public static void main(String[] args) {
-        Marco marco = new Marco();
+        MarcoLambda marco = new MarcoLambda();
         Lamina lamina = new Lamina();
         marco.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
@@ -16,8 +16,8 @@ public class PruebaEventosLambda {
     }
 }
 
-class Marco extends JFrame {
-    Marco() {
+class MarcoLambda extends JFrame {
+    MarcoLambda() {
         setTitle("Prueba de eventos");
         setSize(600, 450);
         setLocationRelativeTo(null);

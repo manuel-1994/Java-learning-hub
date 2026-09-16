@@ -1,4 +1,4 @@
-package com.ejemplos.igu.swing.eventos;
+package com.ejemplos.igu.swing.eventos.accionEvents;
 
 import java.awt.Color;
 import java.awt.event.ActionEvent;
@@ -8,7 +8,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-public class PruebaEventosConClaseExterna {
+public class PruebaEventosClaseInterna {
     public static void main(String[] args) {
         Marco marco = new Marco();
         Lamina lamina = new Lamina();
@@ -33,32 +33,31 @@ class Lamina extends JPanel {
     private JButton botonAmarillo = new JButton("Amarillo");
     private JButton botonRojo = new JButton("Rojo");
 
+    private class ColorDeFondo implements ActionListener {
+        private Color colorDeFondo;
+
+        ColorDeFondo(Color colorDeFondo) {
+            this.colorDeFondo = colorDeFondo;
+        }
+
+        @Override
+        public void actionPerformed(ActionEvent arg0) {
+            setBackground(colorDeFondo);
+        }
+
+    }
+
     public Lamina() {
         add(botonAmarillo);
         add(botonAzul);
         add(botonRojo);
 
-        ColorDeFondo colorAmarillo = new ColorDeFondo(this, Color.yellow);
-        ColorDeFondo colorAzul = new ColorDeFondo(this, Color.blue);
-        ColorDeFondo colorRojo = new ColorDeFondo(this, Color.red);
+        ColorDeFondo colorAmarillo = new ColorDeFondo(Color.yellow);
+        ColorDeFondo colorAzul = new ColorDeFondo(Color.blue);
+        ColorDeFondo colorRojo = new ColorDeFondo(Color.red);
 
         botonAmarillo.addActionListener(colorAmarillo);
         botonAzul.addActionListener(colorAzul);
         botonRojo.addActionListener(colorRojo);
     }
-}
-
-class ColorDeFondo implements ActionListener {
-    private Color colorDeFondo;
-    private JPanel ventana;
-
-    ColorDeFondo(JPanel ventana, Color colorDeFondo) {
-        this.colorDeFondo = colorDeFondo;
-    }
-
-    @Override
-    public void actionPerformed(ActionEvent arg0) {
-        ventana.setBackground(colorDeFondo);
-    }
-
 }

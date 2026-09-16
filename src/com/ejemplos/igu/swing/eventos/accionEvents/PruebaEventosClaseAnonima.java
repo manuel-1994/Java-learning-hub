@@ -1,4 +1,4 @@
-package com.ejemplos.igu.swing.eventos;
+package com.ejemplos.igu.swing.eventos.accionEvents;
 
 import java.awt.Color;
 import java.awt.event.ActionEvent;
@@ -8,7 +8,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-public class PruebaEventos {
+public class PruebaEventosClaseAnonima {
     public static void main(String[] args) {
         Marco marco = new Marco();
         Lamina lamina = new Lamina();
@@ -27,7 +27,7 @@ class Marco extends JFrame {
     }
 }
 
-class Lamina extends JPanel implements ActionListener {
+class Lamina extends JPanel {
 
     private JButton botonAzul = new JButton("Azul");
     private JButton botonAmarillo = new JButton("Amarillo");
@@ -37,21 +37,27 @@ class Lamina extends JPanel implements ActionListener {
         add(botonAzul);
         add(botonAmarillo);
         add(botonRojo);
-        botonAzul.addActionListener(this);
-        botonAmarillo.addActionListener(this);
-        botonRojo.addActionListener(this);
-    }
 
-    @Override
-    public void actionPerformed(ActionEvent arg0) {
-        Object botonPulsado = arg0.getSource();
-        if (botonPulsado == botonAzul) {
-            setBackground(Color.blue);
-        } else if (botonPulsado == botonAmarillo) {
-            setBackground(Color.yellow);
-        } else {
-            setBackground(Color.red);
-        }
+        botonAzul.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent arg0) {
+                setBackground(Color.blue);
+            }
+        });
+
+        botonAmarillo.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent arg0) {
+                setBackground(Color.yellow);
+            }
+        });
+
+        botonRojo.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent arg0) {
+                setBackground(Color.red);
+            }
+        });
     }
 
 }

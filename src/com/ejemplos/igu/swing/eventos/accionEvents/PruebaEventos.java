@@ -4,39 +4,28 @@ import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import javax.swing.JButton;
 import javax.swing.JFrame;
-import javax.swing.JPanel;
+
+import com.ejemplos.igu.swing.eventos.LaminaConBotones;
+import com.ejemplos.igu.swing.eventos.MarcoConEventos;
 
 public class PruebaEventos {
     public static void main(String[] args) {
-        Marco marco = new Marco();
+        MarcoConEventos marco = new MarcoConEventos();
         LaminaEvento lamina = new LaminaEvento();
+
+        marco.setTitle("Marco con botones");
         marco.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         marco.add(lamina);
     }
 }
 
-class Marco extends JFrame {
-    Marco() {
-        setTitle("Prueba de eventos");
-        setSize(600, 450);
-        setLocationRelativeTo(null);
-        setVisible(true);
-    }
-}
-
-class LaminaEvento extends JPanel implements ActionListener {
-
-    private JButton botonAzul = new JButton("Azul");
-    private JButton botonAmarillo = new JButton("Amarillo");
-    private JButton botonRojo = new JButton("Rojo");
+class LaminaEvento extends LaminaConBotones implements ActionListener {
 
     LaminaEvento() {
-        add(botonAzul);
-        add(botonAmarillo);
-        add(botonRojo);
+        super();
+
         botonAzul.addActionListener(this);
         botonAmarillo.addActionListener(this);
         botonRojo.addActionListener(this);

@@ -4,39 +4,28 @@ import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
+import com.ejemplos.igu.swing.eventos.LaminaConBotones;
+import com.ejemplos.igu.swing.eventos.MarcoConEventos;
+
 public class PruebaEventosConClaseExterna {
     public static void main(String[] args) {
-        Marco marco = new Marco();
+        MarcoConEventos marco = new MarcoConEventos();
         LaminaClaseExterna lamina = new LaminaClaseExterna();
 
+        marco.setTitle("Prueba de eveentos con bonotnes");
         marco.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         marco.add(lamina);
     }
 
 }
 
-class Marco extends JFrame {
-    Marco() {
-        setTitle("Prueba de eveentos con bonotnes");
-        setSize(600, 450);
-        setLocationRelativeTo(null);
-        setVisible(true);
-    }
-}
-
-class LaminaClaseExterna extends JPanel {
-    private JButton botonAzul = new JButton("Azul");
-    private JButton botonAmarillo = new JButton("Amarillo");
-    private JButton botonRojo = new JButton("Rojo");
+class LaminaClaseExterna extends LaminaConBotones {
 
     public LaminaClaseExterna() {
-        add(botonAmarillo);
-        add(botonAzul);
-        add(botonRojo);
+        super();
 
         ColorDeFondo colorAmarillo = new ColorDeFondo(this, Color.yellow);
         ColorDeFondo colorAzul = new ColorDeFondo(this, Color.blue);

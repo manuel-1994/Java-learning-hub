@@ -6,35 +6,25 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
+import com.ejemplos.igu.swing.eventos.LaminaConBotones;
+import com.ejemplos.igu.swing.eventos.MarcoConEventos;
+
 public class PruebaEventosLambda {
     public static void main(String[] args) {
-        MarcoLambda marco = new MarcoLambda();
+        MarcoConEventos marco = new MarcoConEventos();
         LaminaConLambda lamina = new LaminaConLambda();
+
+        marco.setTitle("Prueba de eventos con lambda");
         marco.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         marco.add(lamina);
     }
 }
 
-class MarcoLambda extends JFrame {
-    MarcoLambda() {
-        setTitle("Prueba de eventos");
-        setSize(600, 450);
-        setLocationRelativeTo(null);
-        setVisible(true);
-    }
-}
-
-class LaminaConLambda extends JPanel {
-
-    private JButton botonAzul = new JButton("Azul");
-    private JButton botonAmarillo = new JButton("Amarillo");
-    private JButton botonRojo = new JButton("Rojo");
+class LaminaConLambda extends LaminaConBotones {
 
     LaminaConLambda() {
-        add(botonAzul);
-        add(botonAmarillo);
-        add(botonRojo);
+        super();
         botonAzul.addActionListener(e -> setBackground(Color.blue));
         botonAmarillo.addActionListener(e -> setBackground(Color.yellow));
         botonRojo.addActionListener(e -> setBackground(Color.red));

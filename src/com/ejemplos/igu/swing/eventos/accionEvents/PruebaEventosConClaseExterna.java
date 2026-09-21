@@ -11,7 +11,7 @@ import javax.swing.JPanel;
 public class PruebaEventosConClaseExterna {
     public static void main(String[] args) {
         Marco marco = new Marco();
-        Lamina lamina = new Lamina();
+        LaminaClaseExterna lamina = new LaminaClaseExterna();
 
         marco.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         marco.add(lamina);
@@ -28,12 +28,12 @@ class Marco extends JFrame {
     }
 }
 
-class Lamina extends JPanel {
+class LaminaClaseExterna extends JPanel {
     private JButton botonAzul = new JButton("Azul");
     private JButton botonAmarillo = new JButton("Amarillo");
     private JButton botonRojo = new JButton("Rojo");
 
-    public Lamina() {
+    public LaminaClaseExterna() {
         add(botonAmarillo);
         add(botonAzul);
         add(botonRojo);

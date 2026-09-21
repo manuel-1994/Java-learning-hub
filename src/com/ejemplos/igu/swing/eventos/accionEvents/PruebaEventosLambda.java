@@ -9,7 +9,7 @@ import javax.swing.JPanel;
 public class PruebaEventosLambda {
     public static void main(String[] args) {
         MarcoLambda marco = new MarcoLambda();
-        Lamina lamina = new Lamina();
+        LaminaConLambda lamina = new LaminaConLambda();
         marco.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         marco.add(lamina);
@@ -25,13 +25,13 @@ class MarcoLambda extends JFrame {
     }
 }
 
-class Lamina extends JPanel {
+class LaminaConLambda extends JPanel {
 
     private JButton botonAzul = new JButton("Azul");
     private JButton botonAmarillo = new JButton("Amarillo");
     private JButton botonRojo = new JButton("Rojo");
 
-    Lamina() {
+    LaminaConLambda() {
         add(botonAzul);
         add(botonAmarillo);
         add(botonRojo);

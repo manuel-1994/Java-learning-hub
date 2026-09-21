@@ -7,7 +7,7 @@ import javax.swing.JPanel;
 
 public class CreandoLamina {
     public static void main(String[] args) {
-        MiMarco miMarco1 = new MiMarco();
+        MiMarcoConLamina miMarco1 = new MiMarcoConLamina();
         MiLamina miLamina1 = new MiLamina();
 
         miMarco1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -15,8 +15,8 @@ public class CreandoLamina {
     }
 }
 
-class MiMarco extends JFrame {
-    MiMarco() {
+class MiMarcoConLamina extends JFrame {
+    MiMarcoConLamina() {
         setTitle("Mi Marco");
         setSize(400, 300);
         setLocation(100, 100);

@@ -2,9 +2,7 @@ package com.ejemplos.igu.swing.eventos.accionEvents;
 
 import java.awt.Color;
 
-import javax.swing.JButton;
 import javax.swing.JFrame;
-import javax.swing.JPanel;
 
 import com.ejemplos.igu.swing.eventos.LaminaConBotones;
 import com.ejemplos.igu.swing.eventos.MarcoConEventos;
